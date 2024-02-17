@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-    router.get('/', (req,res) => {
-        res.send('estamos en raiz');
-    });
+router.use('users', require('./userRoutes'));
+router.use('products', require('./productRoutes'));
 
-    router.get('/nosotros', (req,res) =>{
-        res.send('estamos en nosotros en archivos diferentes');
-    });
-    
-    module.exports = router;
+module.exports = router;
